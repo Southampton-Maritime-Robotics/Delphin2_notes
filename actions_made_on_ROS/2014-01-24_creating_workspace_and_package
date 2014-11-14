@@ -1,0 +1,22 @@
+# # creating a workspace of delphin2
+
+source /opt/ros/hydro/setup.bash
+mkdir -p ~/<workspace>/src
+cd ~/<workspace>/src
+catkin_init_workspace
+cd ~/<workspace>/
+catkin_make
+#specify workspace
+source ~/<workspace>/devel/setup.bash
+
+# note: workspace is named DelphinROSv3
+
+# # Creating a catkin Package
+
+catkin_create_pkg <package_name> [depend1] [depend2] [depend3]
+e.g. catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+catkin_create_pkg xsens_driver std_msgs rospy roscpp
+
+note: to create package
+    step1: call command “catkin_create_pkg” in directory “src”
+    step2: call command “catkin_make” in directory “catkin_ws”

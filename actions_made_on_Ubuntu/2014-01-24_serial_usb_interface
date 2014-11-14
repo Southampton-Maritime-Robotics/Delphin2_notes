@@ -1,0 +1,43 @@
+# # install serial_usb_interface driver # #
+###########################################
+
+# source:
+http://www.ftdichip.com/Drivers/D2XX.htm
+http://www.ftdichip.com/Support/Documents/AppNotes/AN_220_FTDI_Drivers_Installation_Guide_for_Linux%20.pdf
+
+1.download D2XX drivers currently available for FTDI devices for particular os and CPU architecture, for example, linux 32bit in my case.
+
+1. call 'sudo apt-get install libftdi-dev'
+
+2. download D2XX drivers currently for FTDI devices available at http://www.ftdichip.com/Drivers/D2XX.htm. This driver must compatible with a specific platform and CPU architecture, for example, it is linux 32bit.
+
+3.extract using command 
+-gunzip libftd2xx1.1.12.tar.gz
+-tar –xvf libftd2xx1.1.12.tar
+
+4.type 'sudo -s' to start superuser session (no password comfirmation required)
+
+5.inside releases/build/<arch> (in my case <arch> was x86_64)
+	type 'cp lib* /usr/local/lib' 
+
+6.type "chmod 0755 /usr/local/lib/libftd2xx.so.1.1.12"
+
+7.type "ln -sf /usr/local/lib/libftd2xx.so.1.1.12 /usr/local/lib/libftd2xx.so"
+
+8.type 'exit' to exit superuser mode
+
+9.type "sudo lsmod", and if "ftdi_sio" or "usbserial" present on the list, unload them via command
+-sudo rmmod ftdi_sio
+-sudo rmmod usbserial
+
+10.check if the device is detected by ubuntu via command
+-cd /dev; ls
+
+# note
+
+- if the desktop still could not detect the ftdi-based device, try to update kernel version, restart computer and repeat step 10 (see link below for how to update kernel).
+
+source: http://ubuntuhandbook.org/index.php/2013/09/linux-kernel-3-11-released-install-upgrade-in-ubuntu-13-0412-04/
+
+- keep in mind that a CPU of the Delphin2 is the intel Atom which is compatible with "32bit" architecture only.
+

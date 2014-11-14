@@ -1,0 +1,15 @@
+# steps of how to declare new alias
+- In a home directory, press "ctrl+h" to un-show all hidden files.
+- Search for ".bashrc" and open it.
+- At the very bottom of this file, add many alias as you want in the pattern shown below;
+
+alias <alias_name> = 'command'
+
+# list of alias
+list of important alias that are being used for delphin2 and are contained in ".bashrc" file.
+
+# alias to navigate to a directory "DelphinROSv3"
+alias delcd='cd; cd ..'
+
+# alias on delphin2laptop as a shortcut to ssh to delphin2
+alias delphin2='ssh delphin2@169.254.51.57'

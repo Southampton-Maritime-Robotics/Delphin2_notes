@@ -1,0 +1,9 @@
+update kernel to the version of 3.11 which is a lastest stable version at that time (released in Sep 2013)
+
+# source: http://ubuntuhandbook.org/index.php/2013/09/linux-kernel-3-11-released-install-upgrade-in-ubuntu-13-0412-04/
+
+This makes ubuntu capable of doing a "serial to usb" communication, particularly, for the interfacing of xsens device.
+
+# note:
+-download and install a distribution for 32 bit architecture
+-check on the internet if there is a newer version of kernel available

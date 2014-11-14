@@ -1,0 +1,15 @@
+# # install xsens_driver package
+
+# source: original of xsens_driver was writted by Francis Colas and is available at http://wiki.ros.org/xsens_driver. It then has been modified by Kantapon to have a pabality of handeling MTData2 message type.
+
+# install direction
+1 source /<path>/setup.bash
+2 in <DelphinROSv3/src>, create package named "xsens_driver" via command
+    -catkin_create_pkg xsens_driver std_msgs rospy roscpp
+3 in <DelphinROSv3>, call "catkin_make"
+4 copy "script", "msg", "launch" and "CMakeLists.txt" to a directory of the package that has just been created. i.e. <DelphinROSv3/xsens_driver>
+cd DelphinROSv3/src/xsens_driver/scripts
+do 'chmod +x <filename.py>' for all ".py" files
+cd DelphinROSv3
+catkin_make
+test run by typing <roslaunch xsens_driver xsens_driver.launch>

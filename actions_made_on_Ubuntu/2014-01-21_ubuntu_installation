@@ -1,0 +1,10 @@
+install ubuntu 12.04 LTS from usb stick with respects to information below
+
+# computer details
+cumputer_name: delphin2
+username: delphin2
+password: 012345
+
+# note: 
+- To boot the bios, press "tab" then "F2".
+- In my case, the ubuntu was intalled via usb ROM instead of usb stick.

@@ -1,0 +1,46 @@
+udev rules setting
+
+1. cd /etc/udev/rules.d
+
+2. ls
+
+3. sudo gedit 10-local.rules
+
+4. according to http://hackaday.com/2009/09/18/how-to-write-udev-rules/
+    check devide information with command < udevadm info -a -p $(udevadm info -q path -n /dev/sdd1) >
+
+5. type < KERNEL=="ttyUSB?", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", ATTRS{idProduct}=="0003",  NAME="usbxsens", GROUP=="kt1e11",OWNER=="kt1e11", MODE=="0666">
+
+this detail is only for xsens MTi-G-30 that Alex borrow from a person that I don't know.
+
+6. reboot and cheek device name with commands
+    cd /dev
+    ls
+    
+7. check the the device can stream a raw information with 'cutecom'
+
+# note: 
+in the case of cannot detect a serial port, try to add those ports to a udev.rules.d with a permission status of MODE=="0666"
+
+the full list udev rule being used in the delphin2 is shown below
+
+>>> from this line
+# local udev rules for renaming Delphin2 usb devices
+
+# xsens MTi-G-30
+KERNEL=="ttyUSB?", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", ATTRS{idProduct}=="0003",  NAME="usbxsens", GROUP=="delphin2",OWNER=="delphin2", MODE=="0666"
+
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="11BP0230", NAME="usbtail", GROUP=="delphin2",OWNER=="delphin2", MODE=="0666"
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="A700dAYK", NAME="usblight", GROUP=="delphin2",OWNER=="delphin2", MODE=="0666" 
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="2303", ATTRS{idVendor}=="067b", NAME="usbgps", GROUP=="delphin2",OWNER=="delphin2", MODE=="0666" 
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="ea60", ATTRS{idVendor}=="10c4", NAME="usboceanserver", GROUP=="delphin2",OWNER=="delphin2", MODE=="0666"  
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="A800crLZ", NAME="usbSMS", GROUP=="delphin2",OWNER=="delphin2", MODE=="0666"  
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="11CP0235", NAME="usbGyro", GROUP=="delphin2",OWNER=="delphin2", MODE=="0666"
+  
+KERNEL=="video0", GROUP="video", OWNER="delphin2", MODE="0666"
+KERNEL=="video1", GROUP="video", OWNER="delphin2", MODE="0666"
+KERNEL=="video2", GROUP="video", OWNER="delphin2", MODE="0666"
+KERNEL=="video3", GROUP="video", OWNER="delphin2", MODE="0666"
+
+# KERNEL=="video?", ATTRS{idProduct}=="0804", ATTRS{idVendor}=="046d", NAME="video1"  
+>>> to this line

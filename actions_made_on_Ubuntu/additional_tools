@@ -1,0 +1,19 @@
+# # additional tools # #
+########################
+
+# cutecom: help to monitor a serial port communication
+- install using Ubuntu Software Centre
+
+# terminator: help to handle many terminal windows at time efficiently
+- install using Ubuntu Software Centre
+
+# gedit plug-in: make gedit be capable of doing programming tasks more efficient
+- via command "sudo apt-get install gedit-plugins"
+- source: https://help.gnome.org/users/gedit/unstable/gedit-plugin-guide.html.en
+- setting up a preference
+    - in "Editor"
+        - set "Tap Width" = 4
+        - check "insert space instead of tab"
+        - check "automatic indentation"
+    - in "Plugins"
+        - enable "code comment"

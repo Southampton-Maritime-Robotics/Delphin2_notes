@@ -1,0 +1,11 @@
+# # getting the old nodes across onto the new machine
+
+# direction (thinks to check at) 
+
+-check path of manifest(<pkg_name>)
+
+-check path of <pkg_name>.msg
+
+-serial communication issue
+    --search for "readline(~~~~)" and replace it with "readline()", i.e. delete all the arguments in "readline".
+    --before running any node, try to stream raw data from the hardware using "cutecom". If one cannot connect with the device, try to set an authority in /etc/udev/rule.d/10-local.rules, including this syntax (OWNER=="delphin2", MODE=="0666") at the end of "KERNEL==~~~".

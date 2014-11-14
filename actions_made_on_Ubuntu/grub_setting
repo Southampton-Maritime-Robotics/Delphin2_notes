@@ -1,0 +1,9 @@
+## sourcd: https://thelastmaimou.wordpress.com/2013/11/11/this-grub-does-not-start-in-ubuntu/
+
+according to the link above, grub may get struck when the ubuntu fail it last boot. In this case Grub Menu will appear and wait infinitely for the user to decide what option to select. This may cause a problem for the headless machine like the Delphin2 AUV that has no hardware intrface at all.
+
+to bypass a grub menu in case of failed boot simply add "GRUB_RECORDFAIL_TIMEOUT=0" into /etc/default/grub
+
+step1: open grub file by typing command "sudo gedit /etc/default/grub"
+step2: add parameter "GRUB_RECORDFAIL_TIMEOUT=0" to this file
+step3: cave and close grub file and type "sudo update-grub" to active the setting. Once reboot grub menu should not appear again.

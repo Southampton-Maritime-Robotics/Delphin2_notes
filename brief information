@@ -1,0 +1,32 @@
+This document explains what was happening and why during a preparation step of new working space named DelphinROSv3.
+
+creating date: 23 Jan 2014
+last edit: 24 Jan 2014
+
+# install ubuntu 12.04 LTS
+	- newest LTS version in that time (23 Jan 2014)
+# install ROS hydro-medusa
+	- newest version in that time (23 Jan 2014)
+# install OpenCV 2.4.8
+	- newest version in that time (23 Jan 2014)
+# update kerner to version 3.11
+	- newest stable version in that time (24 Jan 2014)
+
+# setup udev rules	
+    - creating a file name "10-local.rules
+
+# setup network card and fix it to a static ip address
+
+# create workspace named DelphinROSv3
+# install smach_state package
+# install xsens_driver
+# create other pkgs that help to group related nodes together
+
+# setup matlab as an interface to upload/download ROS package to/from delphin2
+
+# declare alias in .bashrc
+
+# additional tools
+- cutecom: help to monitor a serial port communication
+- terminator: help to handle many terminal windows at time efficiently
+- gedit plug-in: make gedit be capable of doing programming tasks more efficient

@@ -1,0 +1,23 @@
+install OpenCV 2.4.8 as it is the newest version of ubuntu in which released on 31 Dec 2013
+
+# source:
+-source file: http://opencv.org/downloads.html
+-install direction: http://karytech.blogspot.co.uk/2012/05/opencv-24-on-ubuntu-1204.html
+
+# installation steps
+-Install Dependencies
+-Compile and Install 
+-Testing
+
+# note: in "Compile and Install" step
+
+-cmake option need to be changed to 
+<cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..>
+
+-skip doing last two minor-steps which are "/usr/local/lib" and "sudo ldconfig"
+
+
+
+
+
+

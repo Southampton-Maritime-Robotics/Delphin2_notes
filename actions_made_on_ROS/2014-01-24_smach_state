@@ -1,0 +1,13 @@
+# # install Smach State from git
+
+# source: http://www.ros.org/wiki/smach
+
+# install direction
+source /<path>/setup.bash
+sudo apt-get install git-core
+cd DelphinROSv3/src
+git clone https://github.com/ros/executive_smach.git
+cd executive_smach
+rosmake
+cd catkin_ws
+catkin_make

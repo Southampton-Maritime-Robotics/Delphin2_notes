@@ -1,0 +1,16 @@
+# # create specific packages to keep all the nodes that that related to specific tasks
+
+# direction
+-for more details, have a look at a note <2014-01-30_create_pkg_navigation>.
+
+# list of other packages (apart from xsens, executive_smach and navigation)
+
+-delphin_mission
+--contain all high-level mission_scripts and launch_files              
+--contain all the miscellaneous nodes
+
+-lowlevel_controllers
+--contain all the nodes that convert high-level commands from into low-level command that will then sent to a hardware_interface nodes
+
+-hardware_interfaces
+--contain all the nodes that related with interfacing to hardwares

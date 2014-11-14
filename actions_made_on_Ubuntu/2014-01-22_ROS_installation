@@ -1,0 +1,8 @@
+install ROS hydro medusa for ubuntu 12.04 (Precise)
+
+# source:http://wiki.ros.org/hydro/Installation/Ubuntu
+
+# note:
+-the "source.list" was the one for "Ubuntu 12.04 (Precise)"
+-the "Desktop-Full Install:" was selected
+-edit a default source directory in ".bashrc"

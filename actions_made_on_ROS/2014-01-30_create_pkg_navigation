@@ -1,0 +1,14 @@
+# # create navigation package to keep all the nodes that associated with kantapon project (navigation of AUVs)
+
+# direction
+1 in "DelphinROSv3/src", call command "catkin_create_pkg navigation std_msgs rospy roscpp" to create a new package
+
+2 copy "scripts", "launch", "maps" and "msg" to a directory of the package that has just been created.
+
+3 modified a "CMakeLists.txt" to have it able to generate new message and add names off all the "necessary msg files" from "msg" folder into message section of "CMakeLists.txt".
+
+4 in "DelphinROSv3", call "catkin_make" to update whole package of DelphinROSv3
+
+5 do "chmod +x <filename.py>" to nodes that are supposed to be excutable nodes
+
+# note: to make all files become executable, call "chmod +x *"
