@@ -1,0 +1,35 @@
+## setup git
+
+# in github:
+-: create repository (with .gitingone and README.md)    
+
+# sync git to local drive
+option1: sync git to an existing directory in the local directory, type:
+-: git init 
+-: git pull <HTTPS clone URL of the repository>
+option2: clone git as a new working directory
+-: git clone <HTTPS clone URL of the repository>
+
+
+## git user setup (help to avoid a step of putting in a username and password everytime you pull)
+
+# global setup: add new user
+    <git config --global user.name <prefered name> >
+    <git config --global user.email <email used for github> >    
+
+# add new remote user from an existing global user
+-: add new remote
+    <git remote add <name> <git@sshHoseName:User/Repo> >
+-: check the original remote url:
+    <git remote -v>
+
+
+## working routine
+
+# at the begining of the day
+-: git pull
+
+# these will be repeated
+-: do something
+-: git commit -m 'description'
+-: git push

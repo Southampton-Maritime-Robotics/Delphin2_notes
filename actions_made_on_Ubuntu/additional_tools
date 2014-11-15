@@ -15,5 +15,6 @@
         - set "Tap Width" = 4
         - check "insert space instead of tab"
         - check "automatic indentation"
+        - uncheck two items in "File Saving"
     - in "Plugins"
         - enable "code comment"
