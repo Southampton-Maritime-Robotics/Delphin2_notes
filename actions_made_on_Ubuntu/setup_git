@@ -13,11 +13,11 @@ option2: clone git as a new working directory
 
 ## git user setup (help to avoid a step of putting in a username and password everytime you pull)
 
-# global setup: add new user
+# global setup: add new user (do only one time for one computer)
     <git config --global user.name <prefered name> >
     <git config --global user.email <email used for github> >    
 
-# add new remote user from an existing global user
+# add new remote user from an existing global user (do every time when add new repository to local drive)
 -: add new remote
     <git remote add <name> <git@sshHoseName:User/Repo> >
 -: check the original remote url:
