@@ -17,9 +17,10 @@ option2: clone git as a new working directory
     <git config --global user.name <prefered name> >
     <git config --global user.email <email used for github> >    
 
-# add new remote user from an existing global user (do every time when add new repository to local drive)
+# add new remote user from an existing global user (do every time when add new repository to local drive).
+With this, you can do git push without typing username and password.
 -: add new remote
-    <git remote add <name> <git@sshHoseName:User/Repo> >
+    <git remote add <name> <git@{sshHoseName}:User/Repo> >
 -: check the original remote url:
     <git remote -v>
 
