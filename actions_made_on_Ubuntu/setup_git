@@ -1,3 +1,13 @@
+## gen ssh keys on local machine
+# in directory ~/.ssh do:
+-: ssh-keygen -f <PreferredName>
+-: create config file with following content
+        Host <PreferredName>-git
+        HostName github.com
+        User <username>
+        Identityfile ~/.ssh/<PreferredName>
+-: add this ssh key (all content in <PreferredName>.pub) to git repository
+
 ## setup git
 
 # in github:
@@ -10,7 +20,6 @@ option1: sync git to an existing directory in the local directory, type:
 option2: clone git as a new working directory
 -: git clone <HTTPS clone URL of the repository>
 
-
 ## git user setup (help to avoid a step of putting in a username and password everytime you pull)
 
 # global setup: add new user (do only one time for one computer)
@@ -21,6 +30,7 @@ option2: clone git as a new working directory
 With this, you can do git push without typing username and password.
 -: add new remote
     <git remote add <name> <git@{sshHoseName}:User/Repo> >
+    e.g. <git remote add origin	git@kantapon-git:/Southampton-Maritime-Robotics/Delphin2_notes>
 -: check the original remote url:
     <git remote -v>
 
