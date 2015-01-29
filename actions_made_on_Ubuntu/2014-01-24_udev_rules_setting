@@ -11,9 +11,14 @@ udev rules setting
 
 5. type < KERNEL=="ttyUSB?", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", ATTRS{idProduct}=="0003",  NAME="usbxsens", GROUP=="kt1e11",OWNER=="kt1e11", MODE=="0666">
 
+NOTE!!: may have to rename using <SYMLINK+="usbxsens"> instead of <NAME="usbxsens">
+
 this detail is only for xsens MTi-G-30 that Alex borrow from a person that I don't know.
 
-6. reboot and cheek device name with commands
+6.1 reboot the udevrule with
+    -<udevadm control --reload-rules>,
+    -<udevadm trigger>, or
+6.2 reboot and cheek device name with commands
     cd /dev
     ls
     
