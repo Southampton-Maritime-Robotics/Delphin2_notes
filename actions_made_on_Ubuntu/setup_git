@@ -43,4 +43,5 @@ With this, you can do git push without typing username and password.
 # these will be repeated
 -: do something
 -: git commit -m 'description'
+-: or moregeneral use git commit -a
 -: git push
