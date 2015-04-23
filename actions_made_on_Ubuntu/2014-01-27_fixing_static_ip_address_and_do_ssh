@@ -35,3 +35,7 @@ iface eth1 inet dhcp
 ---Netmask 255.255.0.0
 ---Gateway 169.254.255.255
 -connect to delphin2 wifi again (this time the connection should be established successfully)
+
+-refer to address as host name
+-- in <sudo gedit /etc/hosts>
+--- add <169.254.51.57	delphin2>
