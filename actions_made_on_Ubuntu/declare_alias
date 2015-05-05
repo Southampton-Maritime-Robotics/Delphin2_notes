@@ -12,4 +12,4 @@ list of important alias that are being used for delphin2 and are contained in ".
 alias delcd='cd; cd ..'
 
 # alias on delphin2laptop as a shortcut to ssh to delphin2
-alias delphin2='ssh delphin2@169.254.51.57'
+alias delphin2='ssh -X delphin2@169.254.51.57'
