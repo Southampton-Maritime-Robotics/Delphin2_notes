@@ -1,0 +1,34 @@
+# define parameter
+-launch file
+--over-depth
+--max-depth-demand
+--lat_orig
+--long_orig
+
+-missioin_script
+--A,B,O
+--time delay
+--depth demand
+--timeDelay
+--depthDemand
+--depthTol
+--depthDemandMin
+
+# general test
+-do dryLandTest to check if all actuators are working well.
+-check if the AUV've got A,B and O right by looking at range and bearing to each of these points. (uncomment while loop in mission_script_kantapon_testEastleigh)
+
+# surge test
+-uncomment while{ rang, bear... }
+-listProp
+-test at depth for the first time
+--let the AUV go from A to B at a constant depth with a propDemand = [10,20]
+--check the depth and pitch history
+--if everything looks nice, repeat the test with propDemand = [10,12,14,...,22]
+
+# sway test
+
+propeller demand list
+thruster demand list
+rudder demand list
+define 
