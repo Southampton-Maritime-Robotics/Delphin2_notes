@@ -39,7 +39,6 @@
 -> ls devel/share/learning_actionlib/msg/ (<action_name>*.msg files must appear)
 -> ls devel/include/learning_actionlib/ (<action_name>*.h files must appear)
 
-
 note: more detail about creating action_server.py and action_client.py can be found in links below:
 
 -> create a fibonnacci_server.py by following link below

@@ -8,6 +8,9 @@
         Identityfile ~/.ssh/<PreferredName>
 -: add this ssh key (all content in <PreferredName>.pub) to git repository
 
+
+
+
 ## setup git
 
 # in github:
@@ -33,6 +36,7 @@ With this, you can do git push without typing username and password.
     e.g. <git remote add origin	git@kantapon-git:/Southampton-Maritime-Robotics/Delphin2_notes>
 -: check the original remote url:
     <git remote -v>
+
 
 
 ## working routine
