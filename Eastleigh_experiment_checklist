@@ -27,8 +27,17 @@
 --if everything looks nice, repeat the test with propDemand = [10,12,14,...,22]
 
 # sway test
+-self.__listThrusterDemand
+-commend the lines with # TODO
+-the change of heading should also be documented. expecting none heading change
+
+# yaw test
+-do at least 540 degree
+
+# zig-zag test
+# pull-out manoeuvring test
+- can be perform at the end of zig-zag manoeuvre
 
 propeller demand list
 thruster demand list
 rudder demand list
-define 
