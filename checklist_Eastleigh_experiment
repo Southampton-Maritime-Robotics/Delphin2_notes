@@ -10,7 +10,7 @@
 --time delay
 --depth demand
 --timeDelay
---depthDemand
+--depthDemand # 0 means do the test on the water surface
 --depthTol
 --depthDemandMin
 
@@ -30,6 +30,7 @@
 # sway test
 -listThrusterDemand
 -step depth demand
+-depth
 
 # yaw test
 -listThrusterDemand
