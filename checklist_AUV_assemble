@@ -1,19 +1,22 @@
 assemble the AUV
+
+-test if the propeller is spining properly
+-test if the rudder coupling works properly
 -test if the sub is working fine, e.g. test run xsens_driver.launch
 -if gps connector is not in used, remove the usb end that connects the mainboard 
 -clean the contact surface of rear-end and apply grease to the O-ring
--insert the electronic into the vessel
--screw in four bolts (not in a row).
+-insert the electronic shelf into the vessel
+-screw in four bolts (not in a row as the endplate will bias to one side)
 -clean the contact surface of front-end and apply grease to the O-ring
--connect all the connector, battery, and magnetic switch
--close the front-end and screw in four bolts (not in a row)
+-connect all the internal connector, battery, and magnetic switch
+-close the front-end and screw in four bolts (not in a row as the endplate will bias to one side)
 -turn-on the sub and try to connect to the delphin2 network to check if it is working ok
 -put the pressure vessel onto the lower yellow flare, and fit it into place with screws.
 -fit the tail section to the pressure vessel (only use three bolts)
--connect all connectors, including the dummy plugs
+-connect all connectors of the resr section to the pressure vessel, including the dummy plugs
 -fit control surface’s spars to the tail section
 -fit the front section to the pressure vessel (use four bolts)
--connect all connectors
+-connect all connectors of the front section to the pressure vessel
 -test run drylandtest
 -close the top yellow flare and lock with bolts.
 -fit control surfaces and propeller to the tail section

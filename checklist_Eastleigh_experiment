@@ -4,6 +4,7 @@
 --max-depth-demand
 --lat_orig
 --long_orig
+--mission-timeout [minute]
 
 -missioin_script
 --A,B,O
@@ -14,30 +15,28 @@
 --depthTol
 --depthDemandMin
 
+-pathFollowingLOS
+--controlRate
+
+-depthPitchPID, headingPID
+--unleash maximum thruster setpoint
+
 # general test
 -do dryLandTest to check if all actuators are working well.
+-do testDepthPitchPID to check of the AUV can still follow the depth demand at hover-mode
+-do testHeadingPID to check of the AUV can still follow the heading demand at hover-mode
 -check if the AUV've got A,B and O right by looking at range and bearing to each of these points. (uncomment while loop in mission_script_kantapon_testEastleigh)
 
 # surge test
 -comment while loop in mission_script_kantapon_testEastleigh
--check the location of timeDelay
 -listProp
 *note: for testing at depth for the first time
 --let the AUV go from A to B at a constant depth with a propDemand = [10,20]
---check the depth and pitch history
+--check the depth and pitch plotted against time
 --if everything looks nice, repeat the test with propDemand = [10,12,14,...,22]
 
-# sway test
--listThrusterDemand
--step depth demand
--depth
-
-# yaw test
--listThrusterDemand
--do at least 540 degree
--step depth demand
-
 # spiral manoeuvring
+-do at least 540 degree
 -listProp
 -listThruster
 -listRudder
