@@ -1,0 +1,5 @@
+downloaded screen for correct ubuntu version from:
+http://packages.ubuntu.com/precise/i386/screen/download
+
+copied into Downloads folder on delphin2, installed via
+> sudo dpkg -i ./screen_4.0.3-14ubuntu8_i386.deb 
