@@ -1,0 +1,9 @@
+connected delphin2 to internet via my laptop (see delphin2-private wiki for instructions)
+ack-grep update
+then installed:
+vim
+mosh
+ack-grep
+htop
+chrony
+
