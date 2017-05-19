@@ -61,3 +61,35 @@ KERNEL=="ttyUSB?", ATTRS{idProduct}=="7523", ATTRS{idVendor}=="1a86", NAME="usbt
 # to force a swap, both lines were uncommented, then added individually with the right device added at the time
 # for some reason the xsens was mis-recognised as the tail several times besides having completely different attributes
 
+# .... a bit later in the day...
+# turns out udev rule of power monitor was outdated. Replacement tail section arduino and actual power monitor udev rules are the same.
+# also two '=' were used for GROUP, OWNER and MODE in all rules, where they should have been '='
+# The up to date set of udev rules is below:
+
+# local udev rules for renaming Delphin2 usb devices
+#
+# # xsens MTi-G-30
+KERNEL=="ttyUSB?", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", ATTRS{idProduct}=="0003",  NAME="usbxsens", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="7523", ATTRS{idVendor}=="1a86", NAME="usbEnergyMonitor", GROUP="delphin2",OWNER="delphin2", MODE="0666"
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="AI03VS52", NAME="usbtail", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="A700dAYK", NAME="usblight", GROUP="delphin2", OWNER="delphin2", MODE="0666"  
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="2303", ATTRS{idVendor}=="067b", NAME="usbgps", GROUP="delphin2", OWNER="delphin2", MODE="0666"  
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="ea60", ATTRS{idVendor}=="10c4", NAME="usboceanserver", GROUP="delphin2", OWNER="delphin2", MODE="0666"  
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="A800crLZ", NAME="usbSMS", GROUP="delphin2", OWNER="delphin2", MODE="0666"  
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="11CP0235", NAME="usbGyro", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+KERNEL=="ttyUSB?", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", ATTRS{serial}=="11CP0235", NAME="usbGyro", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+
+KERNEL=="ttyS2", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+KERNEL=="ttyS0", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+KERNEL=="ttyS3", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+
+KERNEL=="ttyACM?", ATTRS{idProduct}=="0043", ATTRS{idVendor}=="2341", ATTRS{serial}=="6493833393235151E132", NAME="usbArduino", GROUP="delphin2", OWNER="delphin2", MODE="0666"
+
+KERNEL=="video0", GROUP="video", OWNER="delphin2", MODE="0666"
+KERNEL=="video1", GROUP="video", OWNER="delphin2", MODE="0666"
+KERNEL=="video2", GROUP="video", OWNER="delphin2", MODE="0666"
+KERNEL=="video3", GROUP="video", OWNER="delphin2", MODE="0666"
+
+KERNEL=="video?", ATTRS{idProduct}=="0804", ATTRS{idVendor}=="046d", NAME="video1" 
+
