@@ -224,25 +224,25 @@ void loop()
         sensorValue = analogRead(14+i);
         servoPosition[i] = (int)(sensorValue*-0.3793103448 + 256.2068965517);
         
-        charBuf[0] = (char)0; // empty the charBuf
-        dtostrf(servoPosition[i], 1, 2, charBuf); // convert the position i_th servo to string
+        charBuf[0] = (char)0; // empty the charBuf   
+        dtostrf(setPoint[i], 1, 2, charBuf); // convert the setpoint of the i_th servo to string
         strOut +=charBuf;
         strOut +="@"; // delimiter
         
-        charBuf[0] = (char)0; // empty the charBuf   
-        dtostrf(setPoint[i], 1, 2, charBuf); // convert the setpoint of the i_th servo to string
+        charBuf[0] = (char)0; // empty the charBuf
+        dtostrf(servoPosition[i], 1, 2, charBuf); // convert the position i_th servo to string
         strOut +=charBuf;
         strOut +="@"; // delimiter
         
       }
       
       charBuf[0] = (char)0; // empty the charBuf
-      dtostrf(frq, 1, 2, charBuf); // convert prop speed to string
+      dtostrf(setPoint[4], 1, 2, charBuf); // convert setpoint of the speed to string
       strOut +=charBuf;
       strOut +="@"; // delimiter
-
+      
       charBuf[0] = (char)0; // empty the charBuf
-      dtostrf(setPoint[4], 1, 2, charBuf); // convert prop speed to string
+      dtostrf(frq, 1, 2, charBuf); // convert prop speed to string
       strOut +=charBuf;
       strOut +="@"; // delimiter
 
