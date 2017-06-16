@@ -233,7 +233,7 @@ void loop()
         dtostrf(servoPosition[i], 1, 2, charBuf); // convert the position i_th servo to string
         strOut +=charBuf;
         strOut +="@"; // delimiter
-        
+        // Serial.println(charBuf);  // for debugging, print each measurement directly
       }
       
       charBuf[0] = (char)0; // empty the charBuf
@@ -277,3 +277,9 @@ void loop()
 void counterISR(){ 
   counter.poll();
 }
+
+
+
+
+
+
