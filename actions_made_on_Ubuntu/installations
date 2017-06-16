@@ -1,0 +1,24 @@
+########## 2017-03-15
+#connected delphin2 to internet via my laptop (see delphin2-private wiki for instructions)
+ack-grep update
+#then installed:
+vim
+mosh
+ack-grep
+htop
+chrony
+ntp
+
+# edit /etc/ntp.conf to include
+server $laptopIPAddress
+
+# edit laptop /etc/ntp.conf to include
+server $laptopIPAddress
+broadcast $laptopIPAddress
+
+########### 2017-06-16
+# (tf and tf2 were already installed)
+ros-hydro-octomap-msgs
+ros-hydro-octomap-ros 
+ros-hydro-octomap-server 
+ros-hydro-octomap-mapping 
