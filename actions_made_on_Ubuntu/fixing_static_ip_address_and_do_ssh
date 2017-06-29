@@ -1,0 +1,64 @@
+###########################2017-06-29
+
+Changed IP address space, since 169.254.0.0/16 is reserved for link-local IPv4 addresses
+
+new content of /etc/network/interfaces for eth0:
+
+iface eth0 inet static
+    address 192.168.51.57
+    netmask 255.255.0.0
+    broadcast 192.168.255.255
+
+similarly, the connecting laptop needs to be re-configured 
+
+-go to IPv4Settings tab and 
+--set Method: Manual
+--setAddresses with following details
+---Address 192.168.51.58
+---Netmask 255.255.0.0
+---Gateway 192.168.255.255
+
+Caution: two laptops that have the same address set, cannot connect at the same time, so for your machine, replace the 58 in 192.168.51.58 with a unique address that is not 57 (delphin2).
+
+############################2014-01-27
+#step1 on delphin2
+fix static ip address  by copy following code to "/etc/network/interfaces"
+
+then do sudo reboot to apply a configuration
+
+>>> from this line
+# eth0 is acksys, eth1 is wired
+
+auto lo
+iface lo inet loopback
+
+auto eth0 eth1
+iface eth0 inet static
+    address 169.254.51.57
+    network 169.254.0.0
+    netmask 255.255.0.0
+    broadcast 169.254.255.255
+#iface eth1 inet static
+#    address 169.253.51.57
+#    network 169.253.0.0
+#    netmask 255.255.0.0
+#    broadcast 169.253.255.255 
+
+iface eth1 inet dhcp
+>>> upto this line
+
+#step2 on delphin2 laptop
+-connect to delphin2 wifi at the fist time (will never establish as delphin2 wireless accept only a particular format of ip address)
+-disconnect from delphin2 wifi
+-go to wireless icon and then Edit_Connections>Wireless>delphin2>edit
+-go to IPv4Settings tab and 
+--set Method: Manual
+--setAddresses with following details
+---Address 169.254.51.58
+---Netmask 255.255.0.0
+---Gateway 169.254.255.255
+-connect to delphin2 wifi again (this time the connection should be established successfully)
+
+-refer to address as host name
+-- in <sudo gedit /etc/hosts>
+--- add <169.254.51.57	delphin2>
