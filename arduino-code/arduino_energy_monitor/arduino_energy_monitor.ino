@@ -1,4 +1,11 @@
 //#include <FreqPeriodCounter.h>
+// measure battery voltage and current to actuators
+// battery voltage is returned in Volt
+// current is returned in Milliampere
+// most currents are measured in the line from the battery voltage to the actuator driver
+// this battery voltage is measured in this node as well
+// exception to this are the control surfaces, which are supplied with 12 V
+// they are measured in the supply line to the tail section arduino and all servos
 
 // define name of ports to connect with terminal on maxon boards
 #define pinVolBattery 14
