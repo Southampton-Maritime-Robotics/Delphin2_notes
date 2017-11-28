@@ -22,8 +22,8 @@ int sensorValue;
 float sensorValueVol;
 float voltage;
 float mAmp;
-int mVperAmp = 100; // use 185 for 5A 100 for 20A Module and 66 for 30A Module
-int ACSoffset = 2500;
+int mVperAmp = 100; // use 185 for 5A Module, 100 for 20A Module, and 66 for 30A Module
+int ACSoffset = 2500;  // 0 A gives 2.5 V measurement for this sensor configuration
 
 int i = 0;
 int buffLength = 60;
@@ -169,11 +169,18 @@ void loop()
       break;
   
     case 2:
+      // measure the current through the 6 sensors
+      // A1/pin 15: Th0/Vertical front
+      // A2/pin 16: Th1/Vertical aft
+      // A3/pin 17: Th2/Horizontal front
+      // A4/pin 18: Th3/Horizontal aft
+      // A5/pin 19: Arduino and control surface servos
+      // A6/pin 20: Propeller motor
       strOut = "";
       strOut +="#";
       for(i=0;i<6;i++){
         sensorValue = analogRead(i+15);
-        sensorValueVol = (sensorValue / 1023.0) * 5000; // Gets you mV
+        sensorValueVol = (sensorValue / 1023.0) * 5000; // Convert analog read to mV: 10 bit==1024 values between 0V and 5V
         mAmp = 1000*((sensorValueVol - ACSoffset) / mVperAmp);
 
         charBuf[0] = (char)0; // empty the charBuf
